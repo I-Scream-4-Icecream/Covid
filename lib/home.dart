@@ -44,8 +44,19 @@ class Home extends StatelessWidget {
             ),
             child: Column(
               children: <Widget> [
-                CircleAvatar(backgroundColor: Colors.white),
-                SizedBox(height: screenHeight*0.05),
+                CircleAvatar(
+                  radius: 18.0,
+                  backgroundColor: Colors.transparent,
+                  child: ClipOval(
+                    child: Image.asset(
+                      '/img/syria.png',
+                      width: 100.0,
+                      height:100.0,
+                      fit: BoxFit.cover
+                    )
+                  )
+                ),
+                SizedBox(height: screenHeight*0.01),
                 Divider(),
                 SizedBox(height: screenHeight*0.05),
                 Container(
