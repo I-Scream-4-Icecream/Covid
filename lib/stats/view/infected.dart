@@ -1,3 +1,5 @@
+import 'package:covid/stats/api/api.dart';
+import 'package:covid/stats/view/get_count.dart';
 import 'package:flutter/material.dart';
 
 class Infected extends StatefulWidget {
@@ -8,23 +10,15 @@ class Infected extends StatefulWidget {
 class _InfectedState extends State<Infected> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget> [
-        Text(
-          'Infected',
-          style: TextStyle(
-            color: Colors.amber[200],
-            fontSize: 24.0
-          )
-        ),
-        Text(
-          '13538',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 32.0
-          )
-        ),
-      ]
+    return FutureBuilder(
+      future: Api().getCases(),
+      builder: (context, snapshot) {
+        if(snapshot.hasError) {
+          print(snapshot.error);
+        }
+        Color? color = Colors.amber[200];
+        return snapshot.hasData? Count(data: snapshot.data, index: 'TotalConfirmed', type: 'infected', color: color!) : Center(child: CircularProgressIndicator());
+      }
     );
   }
 }

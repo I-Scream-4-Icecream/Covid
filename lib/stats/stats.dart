@@ -9,6 +9,7 @@ class Stats extends StatefulWidget {
 }
 
 class _StatsState extends State<Stats> {
+
   @override
   Widget build(BuildContext context) {
     return Row(
