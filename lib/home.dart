@@ -1,3 +1,4 @@
+import 'package:covid/stats/stats.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -69,65 +70,7 @@ class Home extends StatelessWidget {
                   ),
                   child: Padding(
                     padding: EdgeInsets.only(left: 20, right: 20, top: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget> [
-                        Column(
-                          children: <Widget> [
-                            Text(
-                              'Infected',
-                              style: TextStyle(
-                                color: Colors.amber[200],
-                                fontSize: 24.0
-                              )
-                            ),
-                            Text(
-                              '13538',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 32.0
-                              )
-                            ),
-                          ]
-                        ),
-                        Column(
-                          children: <Widget> [
-                            Text(
-                              'Recovered',
-                              style: TextStyle(
-                                color: Colors.green[300],
-                                fontSize: 24.0
-                              )
-                            ),
-                            Text(
-                              '2450',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 32.0
-                              )
-                            ),
-                          ]
-                        ),
-                        Column(
-                          children: <Widget> [
-                            Text(
-                              'Deaths',
-                              style: TextStyle(
-                                color: Colors.red[300],
-                                fontSize: 24.0
-                              )
-                            ),
-                            Text(
-                              '3657',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 32.0
-                              )
-                            ),
-                          ]
-                        ),
-                      ]
-                    ),
+                    child: Stats()
                   )
                 )
               ]
